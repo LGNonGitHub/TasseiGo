@@ -4,6 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f4f6ef" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          const savedTheme = localStorage.getItem('tasseigo-theme');
+          theme = savedTheme === 'light' || savedTheme === 'dark'
+            ? savedTheme
+            : (window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch {}
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#101712' : '#f4f6ef');
+      })();
+    </script>
     <meta name="description" content="TasseiGō is building the operating system for fitness: discovery, business operations, member engagement, and growth in one connected ecosystem." />
     <meta name="keywords" content="fitness platform, gym management, fitness marketplace, member engagement, gym discovery, fitness business software" />
     <meta property="og:type" content="website" />
@@ -35,9 +49,15 @@
           <a href="#members">For members</a>
           <a href="#roadmap">Roadmap</a>
         </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.9 13.4A8.5 8.5 0 0 1 10.6 3.1 8.5 8.5 0 1 0 20.9 13.4Z" /></svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" /></svg>
+          <span class="theme-toggle-label">Dark</span>
+        </button>
         <a class="header-cta" href="#next-step">Find your place <span aria-hidden="true">↗</span></a>
       </div>
     </header>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
     <main id="main">
       <section class="hero section-wrap" aria-labelledby="hero-title">
@@ -227,6 +247,59 @@
     </footer>
 
     <script>
+      const themeRoot = document.documentElement;
+      const themeToggle = document.querySelector('.theme-toggle');
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+      const applyTheme = (theme, persist = false) => {
+        const isDark = theme === 'dark';
+        themeRoot.dataset.theme = isDark ? 'dark' : 'light';
+        themeToggle?.setAttribute('aria-pressed', String(isDark));
+        themeToggle?.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        themeToggle?.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        const themeLabel = themeToggle?.querySelector('.theme-toggle-label');
+        if (themeLabel) themeLabel.textContent = isDark ? 'Light' : 'Dark';
+        themeMeta?.setAttribute('content', isDark ? '#101712' : '#f4f6ef');
+        if (persist) {
+          try { localStorage.setItem('tasseigo-theme', isDark ? 'dark' : 'light'); } catch {}
+        }
+      };
+      applyTheme(themeRoot.dataset.theme || 'light');
+      themeToggle?.addEventListener('click', () => applyTheme(themeRoot.dataset.theme === 'dark' ? 'light' : 'dark', true));
+
+      const progressFill = document.querySelector('.scroll-progress span');
+      const updateScrollProgress = () => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+        progressFill?.style.setProperty('--scroll-progress', String(progress));
+      };
+      let progressQueued = false;
+      window.addEventListener('scroll', () => {
+        if (progressQueued) return;
+        progressQueued = true;
+        requestAnimationFrame(() => {
+          updateScrollProgress();
+          progressQueued = false;
+        });
+      }, { passive: true });
+      updateScrollProgress();
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const revealTargets = document.querySelectorAll('.hero-copy, .section-intro, .problem-card, .journey-card, .marketplace-copy, .business-copy, .operations-board, .engagement-copy, .intel-copy, .intel-visual, .growth-copy, .principle-row, .opportunity-copy, .opportunity-signals, .model-card, .roadmap-quarter, .next-content');
+      if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.14, rootMargin: '0px 0px -28px 0px' });
+        revealTargets.forEach((element, index) => {
+          element.classList.add('reveal');
+          element.style.setProperty('--reveal-delay', `${(index % 4) * 65}ms`);
+          revealObserver.observe(element);
+        });
+      }
+
       const menuToggle = document.querySelector('.menu-toggle');
       const primaryNav = document.querySelector('#primary-nav');
       menuToggle?.addEventListener('click', () => {

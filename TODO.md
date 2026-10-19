@@ -20,6 +20,11 @@
 - [x] Cover fitness-business discoverability, sponsored discovery, digital courses, webinars, and additional revenue channels.
 - [x] Highlight intuitive use, customization, mobile-friendly access, workflow automation, compliance monitoring, and real-time data access.
 
+## Motion and theme preferences
+- [x] Add polished UI animations and interactive visual components that enhance the existing fitness-tech design without reducing readability or usability.
+- [x] Add a user-controlled dark mode that remains accessible, works responsively, and remembers the visitor’s chosen theme.
+- [x] Respect reduced-motion preferences for animated content.
+
 ## Commercial model, market context, timing, and roadmap
 - [x] Explain the subscription-based model, modular add-ons, and integration support without inventing pricing.
 - [x] Present the pitch deck’s market-opportunity themes—focused industry segments, high switching demand, and low digital penetration—without inventing market-size figures or statistics.
