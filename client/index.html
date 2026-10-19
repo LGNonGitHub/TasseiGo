@@ -69,6 +69,7 @@
             <a class="button button-dark" href="mailto:Tasseigo4life@gmail.com?subject=Fitness%20business%20inquiry">I run a fitness business <span aria-hidden="true">↗</span></a>
             <a class="button button-outline" href="mailto:Tasseigo4life@gmail.com?subject=Prospective%20member%20inquiry">I’m here to get moving <span aria-hidden="true">↗</span></a>
           </div>
+          <button class="tour-launch" type="button" data-tour-open aria-haspopup="dialog" aria-controls="tasseigo-tour">Take a quick tour <span aria-hidden="true">↗</span></button>
           <p class="hero-note"><span class="note-line"></span> Built for the people who make fitness happen.</p>
         </div>
         <div class="hero-visual" aria-label="Illustrative concept of the TasseiGō fitness discovery and management experience">
@@ -170,7 +171,7 @@
         </div>
       </section>
 
-      <section class="engagement section-space" aria-labelledby="engagement-title">
+      <section class="engagement section-space" id="engagement" aria-labelledby="engagement-title">
         <div class="section-wrap engagement-layout">
           <div class="engagement-copy">
             <span class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> Designed for consistency</span>
@@ -205,7 +206,7 @@
         </div>
       </section>
 
-      <section class="growth-band section-space" aria-labelledby="growth-title">
+      <section class="growth-band section-space" id="growth" aria-labelledby="growth-title">
         <div class="section-wrap growth-layout">
           <div class="growth-art" aria-hidden="true"><div class="growth-circle circle-one"></div><div class="growth-circle circle-two"></div><div class="growth-tile tile-one">LOCAL<br />EXPERTISE</div><div class="growth-tile tile-two">DIGITAL<br />REACH</div><div class="growth-tile tile-three">NEW<br />POSSIBILITIES</div><div class="growth-arrow">↗</div></div>
           <div class="growth-copy"><span class="eyebrow"><span class="eyebrow-dot"></span> Room to grow</span><h2 id="growth-title">Local fitness.<br />A bigger <em>stage.</em></h2><p class="section-lede">Help people discover the businesses that make their communities stronger—and give fitness providers more ways to share what they know.</p><div class="growth-points"><span>Increased visibility</span><span>Sponsored discovery with transparent ratings</span><span>Digital courses &amp; webinars</span><span>Revenue beyond the physical location</span></div><a class="button button-dark" href="#next-step">Explore growth tools <span aria-hidden="true">↗</span></a></div>
@@ -245,6 +246,19 @@
       <div class="footer-main section-wrap"><a class="brand footer-brand" href="#top" aria-label="TasseiGō, back to top"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M8 11.5h24M20 11.5v18M13 29.5h14M11 18h7M22 18h7" /></svg></span><span class="brand-name">Tassei<span>Gō</span></span></a><p>Digital infrastructure for a more connected fitness industry.</p><nav class="footer-nav" aria-label="Footer navigation"><a href="#platform">Platform</a><a href="#businesses">Businesses</a><a href="#members">Members</a><a href="#roadmap">Roadmap</a></nav></div>
       <div class="footer-bottom section-wrap"><span>© <span id="year">2026</span> TasseiGō</span><span>Discover · Operate · Engage · Grow</span><a href="#top">Back to top ↑</a></div>
     </footer>
+
+    <dialog class="tour-dialog" id="tasseigo-tour" aria-labelledby="tour-title" aria-describedby="tour-description">
+      <div class="tour-shell">
+        <div class="tour-topline"><span class="eyebrow"><span class="eyebrow-dot"></span> TasseiGō guided tour</span><button class="tour-close" type="button" data-tour-close aria-label="Close tour">×</button></div>
+        <div class="tour-progress-row"><span class="tour-step-count" id="tour-step-count" aria-live="polite">01 / 04</span><div class="tour-progress" id="tour-progress" role="progressbar" aria-label="Tour progress" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1"><span id="tour-progress-fill"></span></div></div>
+        <p class="tour-stage" id="tour-stage" aria-live="polite">01 — DISCOVER</p>
+        <h2 class="tour-title" id="tour-title">Find a place that fits your life.</h2>
+        <p class="tour-description" id="tour-description" aria-live="polite">Explore gyms, yoga studios, pools, and wellness centers by distance and fees, with TasseiScore, structured reviews, and member testimonials to compare what matters.</p>
+        <ul class="tour-highlights" id="tour-highlights" aria-label="Step highlights"></ul>
+        <div class="tour-bottom"><a class="tour-section-link" id="tour-section-link" href="#members">Explore discovery <span aria-hidden="true">↗</span></a><div class="tour-controls"><button class="tour-back" id="tour-back" type="button" disabled>Back</button><button class="tour-next" id="tour-next" type="button"><span id="tour-next-label">Next step</span><span aria-hidden="true">→</span></button></div></div>
+        <p class="tour-note">Product concept from the pitch deck. Booking and accounts are not live here.</p>
+      </div>
+    </dialog>
 
     <script>
       const themeRoot = document.documentElement;
@@ -299,6 +313,84 @@
           revealObserver.observe(element);
         });
       }
+
+      const tourDialog = document.querySelector('#tasseigo-tour');
+      const tourOpeners = document.querySelectorAll('[data-tour-open]');
+      const tourCloseButton = document.querySelector('[data-tour-close]');
+      const tourStage = document.querySelector('#tour-stage');
+      const tourCount = document.querySelector('#tour-step-count');
+      const tourTitle = document.querySelector('#tour-title');
+      const tourDescription = document.querySelector('#tour-description');
+      const tourHighlights = document.querySelector('#tour-highlights');
+      const tourProgress = document.querySelector('#tour-progress');
+      const tourProgressFill = document.querySelector('#tour-progress-fill');
+      const tourSectionLink = document.querySelector('#tour-section-link');
+      const tourBack = document.querySelector('#tour-back');
+      const tourNext = document.querySelector('#tour-next');
+      const tourNextLabel = document.querySelector('#tour-next-label');
+      const tourSteps = [
+        { name: 'DISCOVER', title: 'Find a place that fits your life.', description: 'Explore gyms, yoga studios, pools, and wellness centers by distance and fees, with TasseiScore, structured reviews, and member testimonials to compare what matters.', highlights: ['Compare distance and fees', 'Use TasseiScore and structured reviews', 'Explore gyms, studios, pools, and wellness'], href: '#members', link: 'Explore discovery' },
+        { name: 'OPERATE', title: 'Bring daily work into a clearer flow.', description: 'The pitch deck proposes digitized member records, automated renewal and expiry reminders, flexible session participation, and better attendance planning.', highlights: ['Digitized member records', 'Renewal and expiry reminders', 'Session planning and attendance visibility'], href: '#businesses', link: 'Explore business tools' },
+        { name: 'ENGAGE', title: 'Make progress feel personal and shared.', description: 'Milestones, rewards, challenges, community competitions, and peer benchmarking are designed to help members build consistency.', highlights: ['Personal milestones and rewards', 'Challenges and competitions', 'Peer benchmarking'], href: '#engagement', link: 'Explore member engagement' },
+        { name: 'GROW', title: 'Give local fitness more room to grow.', description: 'Discoverability, sponsored discovery, digital courses, webinars, and additional revenue channels help fitness businesses reach people and share expertise.', highlights: ['Business discoverability', 'Digital courses and webinars', 'Additional revenue channels'], href: '#growth', link: 'Explore growth opportunities' },
+      ];
+      let currentTourStep = 0;
+      let tourOpener = null;
+      const renderTourStep = () => {
+        const step = tourSteps[currentTourStep];
+        const stepNumber = currentTourStep + 1;
+        tourStage.textContent = `${String(stepNumber).padStart(2, '0')} — ${step.name}`;
+        tourCount.textContent = `${String(stepNumber).padStart(2, '0')} / ${String(tourSteps.length).padStart(2, '0')}`;
+        tourTitle.textContent = step.title;
+        tourDescription.textContent = step.description;
+        tourProgress.setAttribute('aria-valuenow', String(stepNumber));
+        tourProgressFill.style.width = `${(stepNumber / tourSteps.length) * 100}%`;
+        tourHighlights.replaceChildren(...step.highlights.map((highlight) => {
+          const item = document.createElement('li');
+          item.textContent = highlight;
+          return item;
+        }));
+        tourSectionLink.href = step.href;
+        tourSectionLink.querySelector('span').previousSibling.textContent = ` ${step.link} `;
+        tourBack.disabled = currentTourStep === 0;
+        tourNextLabel.textContent = currentTourStep === tourSteps.length - 1 ? 'Finish tour' : 'Next step';
+      };
+      const closeTour = () => {
+        if (tourDialog.open && typeof tourDialog.close === 'function') tourDialog.close();
+        else tourDialog.removeAttribute('open');
+      };
+      tourOpeners.forEach((button) => button.addEventListener('click', () => {
+        tourOpener = button;
+        currentTourStep = 0;
+        renderTourStep();
+        if (typeof tourDialog.showModal === 'function') tourDialog.showModal();
+        else tourDialog.setAttribute('open', '');
+        tourCloseButton.focus();
+      }));
+      tourCloseButton.addEventListener('click', closeTour);
+      tourDialog.addEventListener('close', () => tourOpener?.focus());
+      tourDialog.addEventListener('click', (event) => {
+        if (event.target === tourDialog) closeTour();
+      });
+      tourBack.addEventListener('click', () => {
+        if (currentTourStep === 0) return;
+        currentTourStep -= 1;
+        renderTourStep();
+      });
+      tourNext.addEventListener('click', () => {
+        if (currentTourStep === tourSteps.length - 1) {
+          closeTour();
+          return;
+        }
+        currentTourStep += 1;
+        renderTourStep();
+      });
+      tourSectionLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        const target = document.querySelector(tourSectionLink.getAttribute('href'));
+        closeTour();
+        if (target) window.setTimeout(() => target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' }), 0);
+      });
 
       const menuToggle = document.querySelector('.menu-toggle');
       const primaryNav = document.querySelector('#primary-nav');

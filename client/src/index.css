@@ -412,3 +412,58 @@ html[data-theme="dark"] .primary-nav a { border-color: #303e34; }
   .reveal, .reveal.is-visible { opacity: 1 !important; transform: none !important; transition: none !important; }
   .scroll-progress span { transition: none !important; }
 }
+
+
+/* Guided product tour: a compact, task-based path through the fitness story. */
+.tour-launch { margin-top: 16px; padding: 0; display: inline-flex; align-items: center; gap: 9px; border: 0; color: #607c43; background: transparent; cursor: pointer; font-size: 10px; font-weight: 700; }
+.tour-launch span { font-size: 14px; transition: transform .2s ease; }
+.tour-launch:hover span { transform: translate(3px, -3px); }
+.tour-dialog { width: min(540px, calc(100% - 28px)); max-width: none; max-height: min(700px, calc(100vh - 28px)); max-height: min(700px, calc(100dvh - 28px)); margin: auto; padding: 0; overflow: auto; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: var(--paper); box-shadow: 0 32px 100px rgba(8,18,12,.28); }
+.tour-dialog::backdrop { background: rgba(10,16,12,.66); backdrop-filter: blur(5px); }
+.tour-shell { padding: clamp(24px, 5vw, 38px); }
+.tour-topline { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.tour-close { width: 36px; height: 36px; flex: 0 0 36px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--ink); background: transparent; cursor: pointer; font-size: 23px; line-height: 1; transition: border-color .2s ease, background .2s ease, transform .2s ease; }
+.tour-close:hover { border-color: #9db86f; background: rgba(157,184,111,.12); transform: rotate(90deg); }
+.tour-progress-row { display: flex; align-items: center; gap: 14px; margin-top: 28px; }
+.tour-step-count { flex: 0 0 auto; color: #7b887b; font-size: 8px; font-weight: 800; letter-spacing: .13em; }
+.tour-progress { height: 4px; flex: 1; overflow: hidden; border-radius: 5px; background: #e2e8df; }
+.tour-progress span { width: 25%; height: 100%; display: block; border-radius: inherit; background: linear-gradient(90deg, #94bc51, #c8f06c); transition: width .36s cubic-bezier(.2,.7,.2,1); }
+.tour-stage { margin: 30px 0 0; color: #688a3e; font-size: 8px; font-weight: 800; letter-spacing: .14em; }
+.tour-title { max-width: 440px; margin: 12px 0 13px; font-size: clamp(30px, 6vw, 40px); line-height: 1.08; }
+.tour-description { max-width: 455px; margin: 0; color: #69756b; font-size: 12px; line-height: 1.8; }
+.tour-highlights { display: grid; gap: 8px; margin: 23px 0 26px; padding: 0; list-style: none; }
+.tour-highlights li { position: relative; padding: 10px 12px 10px 34px; border: 1px solid #e3e9df; border-radius: 3px; color: #465449; background: #fbfcf9; font-size: 10px; line-height: 1.5; }
+.tour-highlights li::before { position: absolute; top: 10px; left: 12px; content: "✓"; color: #739744; font-weight: 800; }
+.tour-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 20px; border-top: 1px solid var(--line); }
+.tour-section-link { display: inline-flex; align-items: center; gap: 7px; color: #5f813b; font-size: 9px; font-weight: 800; }
+.tour-section-link span { font-size: 13px; }
+.tour-controls { display: flex; align-items: center; gap: 8px; }
+.tour-back, .tour-next { min-height: 40px; padding: 0 14px; border: 1px solid var(--line); border-radius: 3px; cursor: pointer; font-size: 9px; font-weight: 700; transition: transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease; }
+.tour-back { color: var(--ink-soft); background: transparent; }
+.tour-back:disabled { opacity: .45; cursor: not-allowed; }
+.tour-next { display: inline-flex; align-items: center; gap: 12px; border-color: var(--ink); color: var(--paper); background: var(--ink); }
+.tour-next span:last-child { font-size: 14px; }
+.tour-next:hover:not(:disabled), .tour-back:hover:not(:disabled) { transform: translateY(-2px); }
+.tour-next:hover { border-color: #739644; color: #1d2520; background: var(--lime); }
+.tour-note { margin: 17px 0 0; color: #8a958a; font-size: 8px; line-height: 1.6; }
+html[data-theme="dark"] .tour-launch, html[data-theme="dark"] .tour-section-link { color: #c0e88b; }
+html[data-theme="dark"] .tour-step-count, html[data-theme="dark"] .tour-note { color: #a6b3a7; }
+html[data-theme="dark"] .tour-progress { background: #344239; }
+html[data-theme="dark"] .tour-description { color: #b5c1b5; }
+html[data-theme="dark"] .tour-highlights li { border-color: #37463b; color: #d5e0d4; background: #1b271f; }
+html[data-theme="dark"] .tour-back { border-color: #465649; color: #d3ded3; }
+html[data-theme="dark"] .tour-next { border-color: var(--lime); color: #1a251d; background: var(--lime); }
+html[data-theme="dark"] .tour-next:hover { border-color: #d9f79e; background: #d9f79e; }
+html[data-theme="dark"] .tour-close { border-color: #465548; color: #edf3ea; }
+@media (max-width: 520px) {
+  .tour-shell { padding: 22px 19px; }
+  .tour-progress-row { margin-top: 22px; }
+  .tour-stage { margin-top: 24px; }
+  .tour-bottom { align-items: flex-start; flex-direction: column; }
+  .tour-controls { width: 100%; justify-content: flex-end; }
+  .tour-section-link { min-height: 26px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tour-dialog[open] { animation: tour-dialog-in .24s cubic-bezier(.2,.7,.2,1) both; }
+}
+@keyframes tour-dialog-in { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }

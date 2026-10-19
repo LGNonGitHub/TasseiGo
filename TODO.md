@@ -25,6 +25,11 @@
 - [x] Add a user-controlled dark mode that remains accessible, works responsively, and remembers the visitor’s chosen theme.
 - [x] Respect reduced-motion preferences for animated content.
 
+## Reference comparison and guided onboarding
+- [x] Compare the supplied CarbonZero site’s navigation, content hierarchy, interactive experience, and guided tour with TasseiGō; adapt relevant interaction patterns to TasseiGō without copying its brand, climate data, or product-specific tools.
+- [x] Add a keyboard-accessible four-step TasseiGō tour for Discover, Operate, Engage, and Grow, with links to the corresponding page sections and no implication of live booking or account creation.
+- [x] Preserve a concise comparison note with the reference URL and the adopted/non-adopted patterns.
+
 ## Commercial model, market context, timing, and roadmap
 - [x] Explain the subscription-based model, modular add-ons, and integration support without inventing pricing.
 - [x] Present the pitch deck’s market-opportunity themes—focused industry segments, high switching demand, and low digital penetration—without inventing market-size figures or statistics.
