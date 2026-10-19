@@ -25,12 +25,11 @@ export async function setupVite(app: Express, server: Server) {
     const url = req.originalUrl;
 
     try {
-      const clientTemplate = path.resolve(
-        import.meta.dirname,
-        "../..",
-        "client",
-        "index.html"
-      );
+      const requestPath = url.split("?")[0];
+      const isProductApp = requestPath === "/app" || requestPath.startsWith("/app/");
+      const clientTemplate = isProductApp
+        ? path.resolve(import.meta.dirname, "../..", "client", "app", "index.html")
+        : path.resolve(import.meta.dirname, "../..", "client", "index.html");
 
       // always reload the index.html file from disk incase it changes
       let template = await fs.promises.readFile(clientTemplate, "utf-8");
@@ -57,6 +56,11 @@ export function serveStatic(app: Express) {
       `Could not find the build directory: ${distPath}, make sure to build the client first`
     );
   }
+
+  // Keep the marketing homepage at / and serve the app shell for nested product routes.
+  app.get(["/app", "/app/*"], (_req, res) => {
+    res.sendFile(path.resolve(distPath, "app", "index.html"));
+  });
 
   app.use(express.static(distPath));
 

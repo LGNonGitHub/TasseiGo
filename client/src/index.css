@@ -19,6 +19,8 @@
   --content: 1200px;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 92px; }
 body { margin: 0; min-width: 320px; background: var(--paper); color: var(--ink); font-family: "DM Sans", sans-serif; -webkit-font-smoothing: antialiased; }
