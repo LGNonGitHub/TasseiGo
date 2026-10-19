@@ -1,24 +1,246 @@
 <!doctype html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f6ef" />
+    <meta name="description" content="TasseiGō is building the operating system for fitness: discovery, business operations, member engagement, and growth in one connected ecosystem." />
+    <meta name="keywords" content="fitness platform, gym management, fitness marketplace, member engagement, gym discovery, fitness business software" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TasseiGō" />
+    <meta property="og:title" content="TasseiGō — The Operating System for Fitness" />
+    <meta property="og:description" content="Find the right place. Keep showing up. Help good fitness businesses grow." />
+    <meta name="twitter:card" content="summary" />
     <title>TasseiGō — The Operating System for Fitness</title>
-    <!-- THIS IS THE START OF A COMMENT BLOCK, BLOCK TO BE DELETED: Google Fonts here, example:
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    THIS IS THE END OF A COMMENT BLOCK, BLOCK TO BE DELETED -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/index.css" />
   </head>
-
   <body>
-    <div id="root"></div>
-    <script src="/api/platform/config.js"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="TasseiGō home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M8 11.5h24M20 11.5v18M13 29.5h14M11 18h7M22 18h7" /></svg></span>
+          <span class="brand-name">Tassei<span>Gō</span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
+          <span></span><span></span>
+        </button>
+        <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+          <a href="#platform">Platform</a>
+          <a href="#businesses">For businesses</a>
+          <a href="#members">For members</a>
+          <a href="#roadmap">Roadmap</a>
+        </nav>
+        <a class="header-cta" href="#next-step">Find your place <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
 
+    <main id="main">
+      <section class="hero section-wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> A connected ecosystem for fitness</div>
+          <h1 id="hero-title">The operating system for <em>fitness.</em></h1>
+          <p class="hero-lede">Find the right place. Keep showing up. Help good fitness businesses grow. TasseiGō brings discovery, operations, and engagement into one connected experience.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="mailto:Tasseigo4life@gmail.com?subject=Fitness%20business%20inquiry">I run a fitness business <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="mailto:Tasseigo4life@gmail.com?subject=Prospective%20member%20inquiry">I’m here to get moving <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="hero-note"><span class="note-line"></span> Built for the people who make fitness happen.</p>
+        </div>
+        <div class="hero-visual" aria-label="Illustrative concept of the TasseiGō fitness discovery and management experience">
+          <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+          <div class="visual-label"><span class="live-dot"></span> ONE FITNESS ECOSYSTEM</div>
+          <div class="phone-card">
+            <div class="phone-top"><span class="mini-brand"><span class="mini-mark">T</span> tasseigō</span><span class="menu-dots">•••</span></div>
+            <div class="phone-heading"><span>Find your fit</span><span class="filter-chip">Filters <b>+</b></span></div>
+            <div class="search-row"><span class="search-icon">⌕</span><span>Gyms, studios, pools…</span><span class="search-tune">☷</span></div>
+            <div class="place-card">
+              <div class="place-cover cover-one"><span class="cover-tag">STRENGTH</span><span class="cover-ring"></span></div>
+              <div class="place-info"><div><strong>Your next training space</strong><span>Explore by distance, fees &amp; fit</span></div><span class="place-arrow">↗</span></div>
+              <div class="score-row"><span class="score-label">TASSEISCORE</span><span class="score-rule"></span><span class="score-caption">Member-led signals</span></div>
+            </div>
+            <div class="phone-bottom"><span><i class="nav-dot active"></i> Discover</span><span><i class="nav-dot"></i> My routine</span><span><i class="nav-dot"></i> Profile</span></div>
+          </div>
+          <div class="floating-card float-top"><span class="float-icon">↗</span><span><strong>More than nearby</strong><small>Compare what matters</small></span></div>
+          <div class="floating-card float-bottom"><span class="float-icon lime-icon">◎</span><span><strong>Built for consistency</strong><small>Progress that feels personal</small></span></div>
+          <div class="visual-caption">Illustrative product concept</div>
+        </div>
+      </section>
+
+      <div class="ticker" aria-label="Discover, operate, engage, grow">
+        <div class="ticker-track"><span>DISCOVER</span><i>✳</i><span>OPERATE</span><i>✳</i><span>ENGAGE</span><i>✳</i><span>GROW</span><i>✳</i><span>DISCOVER</span><i>✳</i><span>OPERATE</span><i>✳</i><span>ENGAGE</span><i>✳</i><span>GROW</span><i>✳</i></div>
+      </div>
+
+      <section class="problems section-wrap section-space" id="why-tasseigo" aria-labelledby="problem-title">
+        <div class="section-intro split-intro">
+          <div><span class="eyebrow"><span class="eyebrow-dot"></span> The gap in fitness</span><h2 id="problem-title">The workout is only<br />part of the <em>story.</em></h2></div>
+          <p>Finding a good fit, staying consistent, and running a healthy fitness business still take too much effort. TasseiGō is designed to connect the pieces.</p>
+        </div>
+        <div class="problem-grid">
+          <article class="problem-card"><span class="card-number">01 / DISCOVERY</span><h3>“Right for me” is hard to find.</h3><p>Ratings can be inconsistent. Facilities, prices, and crowd information are often difficult to compare.</p><span class="problem-mark">⌕</span></article>
+          <article class="problem-card"><span class="card-number">02 / OPERATIONS</span><h3>Too much admin, not enough people time.</h3><p>Paper records, spreadsheets, manual attendance, and payment reminders keep staff busy with repetitive work.</p><span class="problem-mark">↗</span></article>
+          <article class="problem-card problem-card-accent"><span class="card-number">03 / CONSISTENCY</span><h3>Good intentions meet real life.</h3><p>Work, travel, study, and family can disrupt routines. Fixed schedules do not fit everyone’s week.</p><span class="problem-mark">◌</span></article>
+          <article class="problem-card"><span class="card-number">04 / ENGAGEMENT</span><h3>Activity tracking is not the same as momentum.</h3><p>Generic rewards and limited personalization can make it hard to sustain motivation over time.</p><span class="problem-mark">✳</span></article>
+          <article class="problem-card"><span class="card-number">05 / CROWDING</span><h3>A packed room can derail a plan.</h3><p>Unpredictable peak hours and equipment waits can disrupt workouts and make members skip sessions.</p><span class="problem-mark">⌁</span></article>
+          <article class="problem-card"><span class="card-number">06 / GROWTH</span><h3>Local expertise deserves to be seen.</h3><p>Smaller gyms and specialist studios often lack the visibility and marketing tools of larger chains.</p><span class="problem-mark">↗</span></article>
+        </div>
+      </section>
+
+      <section class="platform-section section-space" id="platform" aria-labelledby="platform-title">
+        <div class="section-wrap">
+          <div class="section-intro centered-intro"><span class="eyebrow"><span class="eyebrow-dot"></span> One connected platform</span><h2 id="platform-title">A better rhythm for<br />every side of <em>fitness.</em></h2><p>From the first search to the next milestone, TasseiGō connects the experience for members and the tools for the businesses that serve them.</p></div>
+          <div class="journey-line" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <div class="journey-grid">
+            <article class="journey-card"><span class="journey-index">01</span><div class="journey-icon icon-search">⌕</div><h3>Discover</h3><p>Explore gyms, yoga studios, pools, and wellness spaces by what fits—not only what is nearest.</p><a href="#members" class="text-link">See the member experience <span aria-hidden="true">↗</span></a></article>
+            <article class="journey-card"><span class="journey-index">02</span><div class="journey-icon icon-ops">▤</div><h3>Operate</h3><p>Bring member records, attendance, renewals, and everyday administration into a more organized flow.</p><a href="#businesses" class="text-link">Explore business tools <span aria-hidden="true">↗</span></a></article>
+            <article class="journey-card"><span class="journey-index">03</span><div class="journey-icon icon-engage">✳</div><h3>Engage</h3><p>Make progress personal with milestones, rewards, challenges, and a stronger sense of community.</p><a href="#members" class="text-link">Build lasting momentum <span aria-hidden="true">↗</span></a></article>
+            <article class="journey-card"><span class="journey-index">04</span><div class="journey-icon icon-grow">↗</div><h3>Grow</h3><p>Help local fitness businesses reach new people and create new digital channels for their expertise.</p><a href="#businesses" class="text-link">See paths to growth <span aria-hidden="true">↗</span></a></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="marketplace section-wrap section-space" id="members" aria-labelledby="market-title">
+        <div class="marketplace-copy">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> For prospective members</span>
+          <h2 id="market-title">Find a place that fits <em>your life.</em></h2>
+          <p class="section-lede">A fitness marketplace designed to make the decision clearer—whether you’re looking for strength training, a yoga class, a swim, or a different kind of movement.</p>
+          <ul class="check-list">
+            <li><span class="check-mark">✓</span><span><strong>Compare the details.</strong> Discover by distance, fees, and TasseiScore.</span></li>
+            <li><span class="check-mark">✓</span><span><strong>Know what members notice.</strong> Structured reviews cover crowd levels, trainers, cleanliness, and equipment.</span></li>
+            <li><span class="check-mark">✓</span><span><strong>Hear real experiences.</strong> Member testimonials add context beyond a star rating.</span></li>
+          </ul>
+          <a class="button button-dark" href="#next-step">Explore the member experience <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="marketplace-art" aria-label="Illustration of fitness center discovery categories and review dimensions">
+          <div class="market-orbit"></div>
+          <div class="map-card">
+            <div class="map-topline"><span>EXPLORE YOUR OPTIONS</span><span class="map-filter">☷ &nbsp; Refine</span></div>
+            <div class="map-scene">
+              <span class="map-road road-a"></span><span class="map-road road-b"></span><span class="map-road road-c"></span><span class="map-road road-d"></span>
+              <span class="map-park park-a"></span><span class="map-park park-b"></span>
+              <span class="map-pin pin-a"><b>G</b></span><span class="map-pin pin-b"><b>Y</b></span><span class="map-pin pin-c"><b>W</b></span><span class="map-you">YOU</span>
+            </div>
+            <div class="map-legend"><span><i class="legend-gym"></i> Gym</span><span><i class="legend-yoga"></i> Yoga</span><span><i class="legend-wellness"></i> Wellness</span></div>
+            <div class="review-panel"><div class="review-heading"><span>What matters to you?</span><span class="review-counter">01—04</span></div><div class="review-tags"><span>Trainer quality</span><span>Cleanliness</span><span>Equipment</span><span>Crowd levels</span></div><div class="review-footer"><span>Member-led context</span><span class="review-arrow">↗</span></div></div>
+          </div>
+          <div class="orbit-caption"><span class="orbit-dot"></span> Gyms · Yoga · Pools · Wellness</div>
+        </div>
+      </section>
+
+      <section class="business-section section-space" id="businesses" aria-labelledby="business-title">
+        <div class="section-wrap business-layout">
+          <div class="business-copy">
+            <span class="eyebrow"><span class="eyebrow-dot"></span> For fitness businesses</span>
+            <h2 id="business-title">Less admin.<br />More room to <em>coach.</em></h2>
+            <p class="section-lede">A clearer operating layer for the daily work behind a great member experience—built for gyms, studios, pools, and specialist fitness centers.</p>
+            <a class="button button-dark" href="#next-step">Explore business tools <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="operations-board">
+            <div class="board-header"><div><span class="board-eyebrow">A MORE CONNECTED WORKFLOW</span><h3>Keep the day in motion.</h3></div><span class="board-symbol">T<span>ō</span></span></div>
+            <div class="workflow-item"><span class="workflow-icon">▦</span><span><strong>Member records</strong><small>One centralized member database</small></span><span class="workflow-state">DIGITIZED</span></div>
+            <div class="workflow-item"><span class="workflow-icon">↻</span><span><strong>Membership tracking</strong><small>Renewal and expiry reminders</small></span><span class="workflow-state">AUTOMATED</span></div>
+            <div class="workflow-item"><span class="workflow-icon">⌁</span><span><strong>Session planning</strong><small>Flexible session-based participation</small></span><span class="workflow-state">ADAPTABLE</span></div>
+            <div class="workflow-item"><span class="workflow-icon">◷</span><span><strong>Attendance planning</strong><small>Better visibility into expected demand</small></span><span class="workflow-state">INSIGHTFUL</span></div>
+            <div class="board-foot"><span class="board-foot-dot"></span> Designed around real working environments</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="engagement section-space" aria-labelledby="engagement-title">
+        <div class="section-wrap engagement-layout">
+          <div class="engagement-copy">
+            <span class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> Designed for consistency</span>
+            <h2 id="engagement-title">Turn a routine into a reason to <em>return.</em></h2>
+            <p class="section-lede">Fitness is not only about activity. The deck proposes personalized milestones and rewards, live challenges, community competitions, and performance benchmarking with peers to make progress feel visible, personal, and shared.</p>
+            <a class="button button-light" href="#next-step">See how members stay engaged <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="engagement-canvas">
+            <div class="progress-card">
+              <div class="progress-top"><span>YOUR PROGRESS PATH</span><span class="progress-menu">···</span></div>
+              <div class="progress-title">Small steps. <em>Real momentum.</em></div>
+              <div class="path-track"><span class="path-segment done"></span><span class="path-segment done"></span><span class="path-segment current"></span><span class="path-segment"></span><span class="path-segment"></span></div>
+              <div class="path-labels"><span>Start</span><span>Build</span><span>Grow</span></div>
+              <div class="milestone"><span class="milestone-icon">✳</span><span><strong>Milestone unlocked</strong><small>Your next goal is taking shape</small></span><span class="milestone-arrow">↗</span></div>
+              <div class="progress-footer"><span>PERSONAL MILESTONES</span><span class="tiny-pips">● ● ●</span></div>
+            </div>
+            <div class="challenge-card"><span class="challenge-spark">✳</span><span class="challenge-label">MOVE TOGETHER</span><strong>Community<br />challenges</strong><span class="challenge-link">Competitions &amp; rewards <b>↗</b></span></div>
+            <div class="peer-card"><span class="peer-overline">YOUR CIRCLE</span><div class="peer-avatars"><i>A</i><i>M</i><i>+</i></div><strong>Progress, shared.</strong><small>Peer benchmarks · Milestones · Rewards</small></div>
+            <span class="engagement-caption">Illustrative product concept</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="intelligence section-wrap section-space" aria-labelledby="intelligence-title">
+        <div class="intel-copy"><span class="eyebrow"><span class="eyebrow-dot"></span> Fitness intelligence</span><h2 id="intelligence-title">Make room for a better <em>session.</em></h2><p>The deck proposes analyzing expected attendance, predicting equipment demand, raising crowd-awareness, and recommending alternative workout schedules. These are proposed product capabilities—not live facility insights.</p><a href="#roadmap" class="text-link">See the product roadmap <span aria-hidden="true">↗</span></a></div>
+        <div class="intel-visual">
+          <div class="intel-topline"><span>PLANNING AHEAD</span><span class="intel-badge">ATTENDANCE + EQUIPMENT FORECASTING</span></div>
+          <div class="intel-heading">Predict patterns. Suggest alternatives.</div>
+          <figure class="demand-chart" role="img" aria-labelledby="demand-chart-title" aria-describedby="demand-chart-description"><figcaption class="sr-only" id="demand-chart-title">Illustrative fitness-center demand forecast</figcaption><p class="sr-only" id="demand-chart-description">A conceptual curve shows expected demand changing over time; it is not live facility data. The proposed tools include attendance analysis, equipment-demand prediction, crowd awareness, and alternative workout schedule recommendations.</p><div class="chart-y" aria-hidden="true"><span>HIGH</span><span>MODERATE</span><span>LOW</span></div><div class="chart-area" aria-hidden="true"><div class="chart-gridline"></div><div class="chart-gridline"></div><div class="chart-gridline"></div><svg viewBox="0 0 500 160" preserveAspectRatio="none"><path class="chart-fill" d="M0 125 C35 116 48 95 80 101 S128 78 157 89 S205 63 232 76 S273 44 301 61 S340 39 371 54 S425 29 500 20 V160 H0Z"/><path class="chart-line" d="M0 125 C35 116 48 95 80 101 S128 78 157 89 S205 63 232 76 S273 44 301 61 S340 39 371 54 S425 29 500 20"/></svg><div class="chart-x"><span>PLAN</span><span>ADAPT</span><span>SMOOTH</span></div></div></figure>
+          <div class="intel-suggestions"><span class="suggestion-icon">✳</span><span><strong>Plan around demand</strong><small>Crowd awareness · Equipment needs · Schedule recommendations</small></span><span class="suggestion-arrow">↗</span></div>
+          <div class="intel-disclaimer">Conceptual illustration — not live facility data</div>
+        </div>
+      </section>
+
+      <section class="growth-band section-space" aria-labelledby="growth-title">
+        <div class="section-wrap growth-layout">
+          <div class="growth-art" aria-hidden="true"><div class="growth-circle circle-one"></div><div class="growth-circle circle-two"></div><div class="growth-tile tile-one">LOCAL<br />EXPERTISE</div><div class="growth-tile tile-two">DIGITAL<br />REACH</div><div class="growth-tile tile-three">NEW<br />POSSIBILITIES</div><div class="growth-arrow">↗</div></div>
+          <div class="growth-copy"><span class="eyebrow"><span class="eyebrow-dot"></span> Room to grow</span><h2 id="growth-title">Local fitness.<br />A bigger <em>stage.</em></h2><p class="section-lede">Help people discover the businesses that make their communities stronger—and give fitness providers more ways to share what they know.</p><div class="growth-points"><span>Increased visibility</span><span>Sponsored discovery with transparent ratings</span><span>Digital courses &amp; webinars</span><span>Revenue beyond the physical location</span></div><a class="button button-dark" href="#next-step">Explore growth tools <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </section>
+
+      <section class="principles section-wrap section-space" aria-labelledby="principles-title">
+        <div class="principles-heading"><span class="eyebrow"><span class="eyebrow-dot"></span> Made for real workflows</span><h2 id="principles-title">Useful by design.<br /><em>Ready to adapt.</em></h2></div>
+        <div class="principle-list"><div class="principle-row"><span>01</span><strong>Intuitive &amp; customizable</strong><p>Support daily tasks with minimal training, with room to fit different kinds of fitness businesses.</p><b>↗</b></div><div class="principle-row"><span>02</span><strong>Mobile-friendly</strong><p>Make essential experiences available where members and teams need them.</p><b>↗</b></div><div class="principle-row"><span>03</span><strong>Automated workflows</strong><p>Reduce repetitive administration and connect the steps that keep a business moving.</p><b>↗</b></div><div class="principle-row"><span>04</span><strong>Compliance &amp; real-time data</strong><p>Bring monitoring and timely operational information into the same platform.</p><b>↗</b></div></div>
+      </section>
+
+      <section class="opportunity section-space" aria-labelledby="opportunity-title">
+        <div class="section-wrap opportunity-layout">
+          <div class="opportunity-copy"><span class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> The moment</span><h2 id="opportunity-title">A focused industry, ready for a more connected <em>way.</em></h2><p>Cloud infrastructure, mobile access, and remote-work adoption are making focused software solutions more relevant to everyday fitness operations.</p></div>
+          <div class="opportunity-signals"><div><span class="signal-index">01</span><strong>Focused<br />industry segments</strong><small>Gyms, studios, pools, and specialist fitness communities.</small></div><div><span class="signal-index">02</span><strong>High switching<br />demand</strong><small>An opportunity theme identified in the pitch deck.</small></div><div><span class="signal-index">03</span><strong>Low digital<br />penetration</strong><small>A digitization gap identified in the pitch deck.</small></div><div class="signal-footnote">Qualitative themes from the supplied pitch deck, not independently verified market data; no figures were provided.</div></div>
+        </div>
+      </section>
+
+      <section class="model section-wrap section-space" aria-labelledby="model-title">
+        <div class="section-intro split-intro"><div><span class="eyebrow"><span class="eyebrow-dot"></span> A flexible business model</span><h2 id="model-title">A foundation that can<br />grow with <em>the work.</em></h2></div><p>The pitch deck describes recurring subscriptions, optional services tailored to enterprise needs, and tiers based on usage scope, user count, or industry-specific modules. It does not provide prices.</p></div>
+        <div class="model-grid"><article class="model-card"><span class="model-no">01</span><span class="model-icon">↻</span><h3>Subscription licensing</h3><p>The deck proposes tiers based on usage scope, number of users, or industry-specific modules.</p><span class="model-rule"></span><small>THE CORE PLATFORM</small></article><article class="model-card model-card-highlight"><span class="model-no">02</span><span class="model-icon">＋</span><h3>Modular add-ons</h3><p>Optional feature sets can be tailored to specific operational needs.</p><span class="model-rule"></span><small>BUILT AROUND YOUR NEEDS</small></article><article class="model-card"><span class="model-no">03</span><span class="model-icon">⇄</span><h3>Integration support</h3><p>Integration packages are designed to minimize disruption and help teams reach value faster.</p><span class="model-rule"></span><small>CONNECTED OPERATIONS</small></article></div>
+      </section>
+
+      <section class="roadmap section-space" id="roadmap" aria-labelledby="roadmap-title">
+        <div class="section-wrap">
+          <div class="section-intro roadmap-intro"><div><span class="eyebrow"><span class="eyebrow-dot"></span> The path ahead</span><h2 id="roadmap-title">Building in <em>stages.</em></h2></div><p>The pitch deck outlines a four-quarter roadmap. No calendar year or release dates were provided.</p></div>
+          <div class="roadmap-track"><article class="roadmap-quarter"><div class="quarter-head"><span>Q1</span><i></i></div><h3>Build the foundation</h3><p>Platform foundation and essential features, followed by early pilot deployments.</p><span class="quarter-tag">FOUNDATION</span></article><article class="roadmap-quarter"><div class="quarter-head"><span>Q2</span><i></i></div><h3>Extend the system</h3><p>Release optional feature add-ons and improve speed and scalability.</p><span class="quarter-tag">ENHANCEMENT</span></article><article class="roadmap-quarter"><div class="quarter-head"><span>Q3</span><i></i></div><h3>Connect the tools</h3><p>Support integrations with business systems, streamlined data sync, and automation.</p><span class="quarter-tag">INTEGRATION</span></article><article class="roadmap-quarter"><div class="quarter-head"><span>Q4</span><i></i></div><h3>Work better together</h3><p>Team workspaces, sharing controls, enhanced reporting, and scenario planning.</p><span class="quarter-tag">COLLABORATION</span></article></div>
+        </div>
+      </section>
+
+      <section class="next-step section-wrap section-space" id="next-step" aria-labelledby="next-title">
+        <div class="next-panel"><div class="next-pattern" aria-hidden="true"></div><div class="next-content"><span class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> Find your place in the ecosystem</span><h2 id="next-title">Fitness moves forward<br />when we move <em>together.</em></h2><p>Whether you run a fitness business or are looking for a better-fit routine, TasseiGō is building for your side of the experience.</p><div class="next-actions"><a class="button button-light" href="mailto:Tasseigo4life@gmail.com?subject=Fitness%20business%20inquiry">I’m a fitness business <span aria-hidden="true">↗</span></a><a class="button button-light-outline" href="mailto:Tasseigo4life@gmail.com?subject=Prospective%20member%20inquiry">I’m a prospective member <span aria-hidden="true">↗</span></a></div><span class="next-footnote">These links open your email app; the website does not create accounts or handle bookings.</span></div><span class="next-symbol" aria-hidden="true">T<span>ō</span></span></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main section-wrap"><a class="brand footer-brand" href="#top" aria-label="TasseiGō, back to top"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M8 11.5h24M20 11.5v18M13 29.5h14M11 18h7M22 18h7" /></svg></span><span class="brand-name">Tassei<span>Gō</span></span></a><p>Digital infrastructure for a more connected fitness industry.</p><nav class="footer-nav" aria-label="Footer navigation"><a href="#platform">Platform</a><a href="#businesses">Businesses</a><a href="#members">Members</a><a href="#roadmap">Roadmap</a></nav></div>
+      <div class="footer-bottom section-wrap"><span>© <span id="year">2026</span> TasseiGō</span><span>Discover · Operate · Engage · Grow</span><a href="#top">Back to top ↑</a></div>
+    </footer>
+
+    <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+      const primaryNav = document.querySelector('#primary-nav');
+      menuToggle?.addEventListener('click', () => {
+        const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!isOpen));
+        menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+        primaryNav?.classList.toggle('is-open', !isOpen);
+      });
+      primaryNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+        menuToggle?.setAttribute('aria-expanded', 'false');
+        menuToggle?.setAttribute('aria-label', 'Open navigation');
+        primaryNav?.classList.remove('is-open');
+      }));
+      document.querySelector('#year').textContent = new Date().getFullYear();
+    </script>
   </body>
-
 </html>
